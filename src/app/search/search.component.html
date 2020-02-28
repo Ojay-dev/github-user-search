@@ -1,0 +1,9 @@
+<div class="search-section">
+  <h2><i class="material-icons">search</i>Search for users on github</h2>
+  <form (ngSubmit)="search(searchTerm)">
+    <div>
+      <input type="search" [(ngModel)]="searchTerm" name="searchTerm" placeholder="Search GitHub">
+      <input type="submit" value="Search">
+    </div>
+  </form>
+</div>

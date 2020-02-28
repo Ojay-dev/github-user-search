@@ -1,0 +1,20 @@
+<section class="result-section">
+  <h2>{{users.total_count}} user results</h2>
+  <hr>
+
+  <div *ngFor="let item of users.items">
+    <a href="{{item.html_url}}">
+      <span><img [src]="item.avatar_url" width="98px" width="98px" alt="user-avatar"></span>
+      <span>
+        <h2>Prosper Otemuyiwa<span>{{item.login}}</span></h2>
+        <h3>Open Source Engineer</h3>
+        <span class="rating">
+          <h4>Stars <span>159</span></h4>
+          <h4>Followers <span>2.6k</span></h4>
+        </span>
+      </span>
+    </a>
+  </div>
+
+
+</section>

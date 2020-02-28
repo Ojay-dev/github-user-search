@@ -1,1 +1,247 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: Roboto;
+  src: url(src/assets/font/Roboto/Roboto-Regular.ttf) format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(src/assets/font/Roboto/Roboto-Light.ttf) format("truetype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(src/assets/font/Roboto/Roboto-Medium.ttf) format("truetype");
+  font-weight: 500;
+}
+
+
+body {
+  width: 80%;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: Roboto, sans-serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 28px;
+  color: #333333;
+}
+
+hr {
+  border: .5px solid #CCCCCC;
+}
+
+div.search-section {
+  width: 50%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+div.search-section h2 {
+  text-align: left;
+}
+
+div.search-section i {
+  vertical-align: middle;
+  font-size: 40px;
+}
+
+div.search-section div {
+  display: flex;
+}
+
+div.search-section input[type=search] {
+  width: 100%;
+  padding: 16px 30px;
+  border: 1px solid #AAAAAA;
+  box-sizing: border-box;
+  border-radius: 32px;
+  margin-inline-end: 8px;
+}
+
+div.search-section input[type=search],
+div.search-section input[type=search]::placeholder {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+div.search-section input[type=search]::placeholder {
+  color: #BBBBBB;
+}
+
+div.search-section input[type=submit] {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+  padding: 16px 30px;
+  color: #ffffff;
+  background: #3C4146;
+  border-radius: 32px;
+  border: none;
+}
+
+.result-section>div {
+  padding-block-start: 30px;
+  padding-block-end: 10px;
+  border-bottom: 1px solid #CCCCCC;
+}
+
+.result-section a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.result-section div span:first-child {
+  margin-inline-end: 1.375rem;
+}
+
+.result-section div span:last-child h2 {
+  font-weight: 500;
+  margin-block-end: 4px;
+}
+
+.result-section div span:last-child h2>span {
+  font-weight: normal;
+  color: #999999;
+  margin-inline-start: 1.5rem;
+}
+
+.result-section div span:last-child h3 {
+  font-weight: 300;
+  margin-block-start: 4px;
+  margin-block-end: 7.5px;
+}
+
+.rating {
+  display: flex;
+}
+
+.rating h4 {
+  font-size: 1rem;
+  line-height: 21px;
+  margin-block-start: 7.5px;
+  color: #AAAAAA;
+}
+
+.rating h4>span {
+  font-size: 1rem;
+  line-height: 21px;
+  color: #333333;
+  padding: 2px 9px;
+  background: #C4C4C4;
+  border-radius: 30px;
+}
+
+.not-found {
+  width: 80%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  border-block-end: 1px solid #CCCCCC;
+}
+
+.not-found span {
+  font-size: 4rem;
+  color: #BDBDBD;
+}
+
+.not-found h2 {
+  font-size: 2rem;
+  margin-block-start: 0;
+}
+
+@media screen and (max-width: 58.5rem) {
+  .not-found h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 48rem) {
+
+  h2,
+  .result-section div span:last-child h3 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+
+  div.search-section {
+    width: 80%;
+  }
+
+  div.search-section i {
+    font-size: 30px;
+    color: #AAAAAA;
+  }
+
+  .rating h4,
+  .rating h4>span {
+    font-size: 0.875rem;
+  }
+}
+
+@media screen and (max-width: 37.25rem) {
+
+  div.search-section input[type=search],
+  div.search-section input[type=search]::placeholder,
+  div.search-section input[type=submit] {
+    font-size: 14px;
+    padding: 12px 20px;
+  }
+
+  .result-section div span:last-child h2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .result-section div span:last-child h2>span {
+    margin-inline-start: 0;
+  }
+
+}
+
+@media screen and (max-width: 25rem) {
+
+  h2,
+  .result-section div span:last-child h3 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  div.search-section i {
+    font-size: 20px;
+  }
+
+  .result-section div span:last-child h3 {
+    margin-block-end: 2px;
+  }
+
+  .rating h4 {
+    margin-block-start: 2px;
+  }
+}
+
+@media screen and (max-width: 22.375rem) {
+  div.search-section input[type=search] {
+    width: 60%;
+  }
+}
