@@ -9,6 +9,7 @@ import { UserListComponent } from './user-list/user-list.component';
 import { SearchComponent } from './search/search.component';
 import { UserService } from './services/user-service/user.service';
 import { UserResolver } from './services/user-resolver/user-resolver.service';
+import { UsersCountResolver } from './services/user-resolver/users-count.service';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { UserResolver } from './services/user-resolver/user-resolver.service';
   ],
   providers: [
     UserService,
-    UserResolver
+    UserResolver,
+    UsersCountResolver
   ],
   bootstrap: [AppComponent]
 })

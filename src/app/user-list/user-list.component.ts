@@ -24,10 +24,10 @@ export class UserListComponent implements OnInit {
 
 
     this.users = this.route.snapshot.data.users;
-    this.usersLength = this.users.length;
+    this.usersLength = this.route.snapshot.data.usersCount.total_count;
     this.userName = this.route.snapshot.params.user;
     this.userExist = (this.usersLength > 0) ? true : false;
-    console.log(this.users[0].followers);
+    console.log(this.usersLength);
   }
 
   abbrNum(num, decPlaces) {
