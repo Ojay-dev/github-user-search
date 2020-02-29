@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
 
-import { User } from '../user';
+import { User } from '../../user';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,19 @@ export class UserService {
     if (this.users) {
       return of(this.users);
     }
-    return this.http.get<User[]>(this.githubUsersUrl + searchTerm)
+    return this.http.get<any>(this.githubUsersUrl + searchTerm)
+      .pipe(
+        // tap(data => console.log(JSON.stringify(data.items))),
+        tap(data => this.users = data),
+        catchError(this.handleError)
+      );
+  }
+
+  getUser(url: string): Observable<any> {
+    // if (this.users) {
+    //   return of(this.users);
+    // }
+    return this.http.get<User[]>(url)
       .pipe(
         // tap(data => console.log(JSON.stringify(data))),
         tap(data => this.users = data),

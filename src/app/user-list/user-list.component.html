@@ -1,12 +1,12 @@
-<section class="result-section">
-  <h2>{{users.total_count}} user results</h2>
+<!-- <section *ngIf="userExist" class="result-section">
+  <h2>{{usersLength}} user results</h2>
   <hr>
 
-  <div *ngFor="let item of users.items">
-    <a href="{{item.html_url}}">
-      <span><img [src]="item.avatar_url" width="98px" width="98px" alt="user-avatar"></span>
+  <div *ngFor="let user of users">
+    <a href="{{user.html_url}}">
+      <span><img [src]="user.avatar_url" width="98px" width="98px" alt="user-avatar"></span>
       <span>
-        <h2>Prosper Otemuyiwa<span>{{item.login}}</span></h2>
+        <h2>Prosper Otemuyiwa<span>{{user.login}}</span></h2>
         <h3>Open Source Engineer</h3>
         <span class="rating">
           <h4>Stars <span>159</span></h4>
@@ -16,5 +16,33 @@
     </a>
   </div>
 
-
 </section>
+
+<div *ngIf="!userExist" class="not-found">
+  <span class="material-icons">search</span>
+  <h2>We couldn’t find any user matching <b>"{{userName}}"</b></h2>
+</div> -->
+
+<section *ngIf="userExist" class="result-section">
+  <h2>{{usersLength}} user results</h2>
+  <hr>
+
+  <div *ngFor="let user of users">
+    <a href="#">
+      <span><img [src]="user.avatar_url" width="98px" width="98px" alt="user-avatar"></span>
+      <span>
+        <h2>{{user?.name}}<span>{{user.login}}</span></h2>
+        <h3>{{user?.bio}}</h3>
+        <span class="rating">
+          <h4>Stars <span>159</span></h4>
+          <h4>Followers <span>{{abbrNum(user.followers, 1)}}</span></h4>
+        </span>
+      </span>
+    </a>
+  </div>
+</section>
+
+<div *ngIf="!userExist" class="not-found">
+  <span class="material-icons">search</span>
+  <h2>We couldn’t find any user matching <b>"{{userName}}"</b></h2>
+</div>

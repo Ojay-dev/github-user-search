@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { SearchComponent } from './search/search.component';
-import { UserService } from './services/user.service';
+import { UserService } from './services/user-service/user.service';
 import { UserResolver } from './services/user-resolver/user-resolver.service';
 
 @NgModule({
