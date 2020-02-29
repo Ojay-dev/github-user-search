@@ -27,7 +27,6 @@ export class UserListComponent implements OnInit {
     this.usersLength = this.route.snapshot.data.usersCount.total_count;
     this.userName = this.route.snapshot.params.user;
     this.userExist = (this.usersLength > 0) ? true : false;
-    console.log(this.usersLength);
   }
 
   abbrNum(num, decPlaces) {
